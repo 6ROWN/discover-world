@@ -22,21 +22,16 @@ const PlaceList = ({ placeLists }: any) => {
 					Searching results for {searchInput}
 				</h1>
 				<div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-8">
-					{placeLists?.map((placeData: any, index: number) => (
-						<div
-							onClick={() => setSelectedPlace(placeData)}
-							key={index}
-						>
-							<PlaceCard placeData={placeData} />
-						</div>
-					))}
-				</div>
-				<div>
-					{placeLists?.length == 0 && (
-						<div className="mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-8">
-							{generateSkeletonArray(10)}
-						</div>
-					)}
+					{placeLists?.length === 0 || !placeLists
+						? generateSkeletonArray(10)
+						: placeLists.map((placeData: any, index: number) => (
+								<div
+									onClick={() => setSelectedPlace(placeData)}
+									key={index}
+								>
+									<PlaceCard placeData={placeData} />
+								</div>
+						  ))}
 				</div>
 				<div>
 					{selectedPlace?.name ? (
