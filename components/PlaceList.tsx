@@ -22,7 +22,7 @@ const PlaceList = ({ placeLists }: any) => {
 					Searching results for {searchInput}
 				</h1>
 				<div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-8">
-					{placeLists?.length === 0 || !placeLists
+					{placeLists?.length < 1 || !placeLists
 						? generateSkeletonArray(10)
 						: placeLists.map((placeData: any, index: number) => (
 								<div
