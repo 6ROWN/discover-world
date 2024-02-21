@@ -5,7 +5,6 @@ import Hero from "@/components/Hero";
 import { fetchPlaces } from "@/utils/request";
 import PlaceList from "@/components/PlaceList";
 import { useUserSearchContext } from "@/context/userSearchContext";
-import Skeleton from "@/components/Skeleton";
 import Footer from "@/components/Footer";
 
 export default function Home() {
