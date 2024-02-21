@@ -30,7 +30,7 @@ export default function Home() {
 		<main className="overflow-hidden">
 			<Header />
 			<Hero />
-			{placeLists ? <PlaceList placeLists={placeLists} /> : null}
+			{placeLists && <PlaceList placeLists={placeLists} />}
 			<Footer />
 		</main>
 	);
