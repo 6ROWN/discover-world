@@ -18,7 +18,9 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning={true}>
 			<UserSearchProvider>
-				<body className={inter.className}>{children}</body>
+				<body className={`{inter.className} flex h-full`}>
+					{children}
+				</body>
 			</UserSearchProvider>
 		</html>
 	);
